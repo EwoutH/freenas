@@ -14,7 +14,7 @@ jobs:
 
 before_install:
   - python --version
-  - pip3 install -U pip3
+  - pip3 install -U pip
   - pip3 install -U flake8 pytest codecov requests
 
 install: pip install ".[test]" .
