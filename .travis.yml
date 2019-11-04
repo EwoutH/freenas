@@ -12,10 +12,16 @@ jobs:
   - name: Python Nightly x64
     python: nightly
 
-install:
+before_install:
   - python --version
   - pip3 install -U pip3
   - pip3 install -U flake8 pytest codecov requests
 
-script: .travis/flake8.sh
+install: pip install ".[test]" .
 
+script:
+ - .travis/flake8.sh
+ - pytest # run tests
+
+after_success:
+  - codecov
