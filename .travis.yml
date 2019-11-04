@@ -13,6 +13,9 @@ jobs:
     python: nightly
 
 install:
-    - pip3 install flake8
+  - python --version
+  - pip3 install -U pip3
+  - pip3 install -U flake8 pytest codecov requests
 
 script: .travis/flake8.sh
+
