@@ -1,6 +1,9 @@
 language: python
-python:
-    - 3.8
+dist: bionic    
+python: 3.8
+arch:
+ - x64
+ - arm64
 
 install:
     - sudo apt-get -qq update
